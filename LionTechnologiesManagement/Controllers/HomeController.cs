@@ -6,14 +6,17 @@ using System.Web.Mvc;
 
 namespace LionTechnologiesManagement.Controllers
 {
+    //checks to make sure user is authorized, if they are, allows the following controllers
+    [Authorize]
     public class HomeController : Controller
-    {
+    {   //everyone has to be authorized except allowanonymous
+        //[AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        /*public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
@@ -24,6 +27,26 @@ namespace LionTechnologiesManagement.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }*/
+
+        public ActionResult Add()
+        {
+            return View();
+        }        
+        
+        public ActionResult Reports()
+        {
+            return View();
+        }
+
+        public ActionResult Accounts()
+        {
+            return View();
+        }
+
+        public ActionResult Settings()
+        {
             return View();
         }
     }
